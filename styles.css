@@ -1,4 +1,4 @@
-* {
+d* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,12 +7,12 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f7f7f7;
+    background-color: #edd9cc;
     color: #333;
 }
 
 header {
-    background: #333;
+    background: #4a4203;
     color: #fff;
     padding: 1rem 2rem;
     display: flex;
