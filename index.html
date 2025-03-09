@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophie & Marvin's Wedding</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background-color: #FDF6EC;
+            color: #8B4513;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #D4A373;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+        }
+        .countdown {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .section {
+            margin: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FAE1DD;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #8B4513;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Sophie & Marvin's Wedding
+    </header>
+    
+    <div class="countdown" id="countdown"></div>
+    
+    <div class="section">
+        <h2>Event Details</h2>
+        <p>Join us on <strong>May 23, 2026</strong> at Current at Pier Sixty, NYC.</p>
+    </div>
+    
+    <div class="section">
+        <h2>RSVP</h2>
+        <input type="text" id="guestName" placeholder="Your Name">
+        <button onclick="submitRSVP()">Submit</button>
+    </div>
+    
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date('May 23, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerHTML = `Only ${days} days until the big day!`;
+        }
+        
+        function submitRSVP() {
+            const name = document.getElementById('guestName').value;
+            if (name) {
+                alert(`Thank you for your RSVP, ${name}!`);
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 86400000);
+    </script>
+</body>
+</html>
